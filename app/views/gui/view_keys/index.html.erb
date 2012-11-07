@@ -1,0 +1,33 @@
+<h1>Listing gui_view_keys</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Image</th>
+    <th>X</th>
+    <th>Y</th>
+    <th>Width</th>
+    <th>Height</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @gui_view_keys.each do |gui_view_key| %>
+  <tr>
+    <td><%= gui_view_key.name %></td>
+    <td><%= gui_view_key.image_id %></td>
+    <td><%= gui_view_key.x %></td>
+    <td><%= gui_view_key.y %></td>
+    <td><%= gui_view_key.width %></td>
+    <td><%= gui_view_key.height %></td>
+    <td><%= link_to 'Show', gui_view_key %></td>
+    <td><%= link_to 'Edit', edit_gui_view_key_path(gui_view_key) %></td>
+    <td><%= link_to 'Destroy', gui_view_key, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New View key', new_gui_view_key_path %>

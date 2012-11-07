@@ -1,0 +1,27 @@
+<h1>Listing gui_dialogs</h1>
+
+<table>
+  <tr>
+    <th>Module</th>
+    <th>Title jp</th>
+    <th>Title en</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @gui_dialogs.each do |gui_dialog| %>
+  <tr>
+    <td><%= gui_dialog.module %></td>
+    <td><%= gui_dialog.title_jp %></td>
+    <td><%= gui_dialog.title_en %></td>
+    <td><%= link_to 'Show', gui_dialog %></td>
+    <td><%= link_to 'Edit', edit_gui_dialog_path(gui_dialog) %></td>
+    <td><%= link_to 'Destroy', gui_dialog, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Dialog', new_gui_dialog_path %>

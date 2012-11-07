@@ -1,0 +1,28 @@
+<%= form_for(@view_key) do |f| %>
+  <% if @view_key.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@view_key.errors.count, "error") %> prohibited this view_key from being saved:</h2>
+
+      <ul>
+      <% @view_key.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= hidden_field_tag :image_id, @image.id %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+        (x=<%= f.label :x, @view_key.x, :id => 'view_key_x' %><%= f.hidden_field :x %>,
+      y=<%= f.label :y, @view_key.y, :id => 'view_key_y' %><%= f.hidden_field :y %>,
+      w=<%= f.label :width, @view_key.width, :id => 'view_key_w' %><%= f.hidden_field :width %>,
+      h=<%= f.label :height, @view_key.height, :id => 'view_key_h' %>)<%= f.hidden_field :height %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

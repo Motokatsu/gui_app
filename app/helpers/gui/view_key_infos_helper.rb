@@ -1,0 +1,2 @@
+module Gui::ViewKeyInfosHelper
+end

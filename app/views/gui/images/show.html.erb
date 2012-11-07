@@ -1,0 +1,88 @@
+<table>
+  <tr>
+    <td class="main">
+      <nav class="thumbnail">
+        <ul>
+        <% @images.each do |image| %>
+        <% thumb = image_tag("/images/#{image.style}/#{image.name}", :alt => "Sample App", :class => "round", :size => "40x40") %>
+          <% if @image.nil? or image.id != @image.id %>
+          <li class="image">
+          <% else %>
+          <li class="image_selected">
+          <% end %>
+            <%= link_to thumb, gui_image_path(image) %>
+          </li>
+        <% end %>
+          <li>
+            <%= link_to 'New Image', new_gui_image_path(:panel_id => @panel.id) %>
+          </li>
+        </ul>
+      </nav>
+      <br/>
+      <hr>
+
+      <% unless @image.nil? %>
+      <%= render 'image' %>
+      <%= link_to 'Edit', edit_gui_image_path(@image) %> |
+      <%= link_to 'Delete', @image, :method => :delete,
+                                 :confirm => "Are you sure?",
+                                 :title => @image.name %>
+
+      <% else %>
+      <span>No image!</span>
+      <% end %>
+
+    </td>
+    <td class="sidebar round">
+      <div class="panel_info">
+        <b>Japanese:</b><br/>
+        <% unless @panel.nil? %>
+        <%= @panel.name_jp %><br/>
+        <% else %>
+        <% end %>
+        <b>English:</b><br/>
+        <%= @panel.name_en %><br/>
+        <br/>
+        <%= link_to 'Edit', edit_gui_panel_path(@panel) %> | <%= link_to 'Back', gui_panels_path %>
+      </div>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td class="view_key_list round">
+      <table id="view_keys">
+      <% @image.view_keys.each do |view_key| %>
+        <tr>
+        <% logic_module = logic_name = logic_link = logic_symbol = update_on_realtime = update_on_activate = 'unknown'%>
+        <% logic_module = view_key.logic.module unless view_key.logic.nil? %>
+        <% logic_name = view_key.logic.name unless view_key.logic.nil? %>
+        <% logic_link = gui_logic_path(view_key.logic) unless view_key.logic.nil? %>
+        <% logic_symbol = view_key.logic.symbol unless view_key.logic.nil? %>
+        <% update_on_realtime = view_key.view_key_info.update_on_realtime unless view_key.view_key_info.nil? %>
+        <% update_on_activate = view_key.view_key_info.update_on_activate unless view_key.view_key_info.nil? %>
+        <%= content_tag :td, :x => view_key.x, :y => view_key.y, :w => view_key.width, :h => view_key.height, :data => {:logic_module => logic_module, :logic_name => logic_name, :logic_link => logic_link, :logic_symbol => logic_symbol, :update_on_realtime => update_on_realtime, :update_on_activate => update_on_activate} do %>
+            <%=view_key.name %> (x=<%=view_key.x %>, y=<%=view_key.y %>, w=<%=view_key.width %>, h=<%=view_key.height %>)
+        <% end %>
+        </tr>
+      <% end %>
+      </table>
+    </td>
+    <td class="logic_info round">
+      <b>Module:</b><br/>
+      <span id="logic_module"></span><br>
+      <b>Logic name:</b><br/>
+      <span id="logic_name"></span><br>
+      <b>Symbol:</b><br/>
+      <span id="logic_symbol"></span><br>
+      <b>Update on realtime:</b><br>
+      <span id="update_on_realtime"></span><br>
+      <b>Update on activate:</b><br>
+      <span id="update_on_activate"></span><br> 
+    </td>
+  </tr>
+</table>
+
+<%= link_to 'Back', gui_panels_path %>
+<p id="db"></p>

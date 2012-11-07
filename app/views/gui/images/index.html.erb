@@ -1,0 +1,29 @@
+<h1>Listing gui_images</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Style</th>
+    <th>Panel</th>
+    <th>Dialog</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @gui_images.each do |gui_image| %>
+  <tr>
+    <td><%= gui_image.name %></td>
+    <td><%= gui_image.style %></td>
+    <td><%= gui_image.panel_id %></td>
+    <td><%= gui_image.dialog_id %></td>
+    <td><%= link_to 'Show', gui_image %></td>
+    <td><%= link_to 'Edit', edit_gui_image_path(gui_image) %></td>
+    <td><%= link_to 'Destroy', gui_image, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Image', new_gui_image_path %>

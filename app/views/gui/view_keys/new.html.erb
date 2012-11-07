@@ -1,0 +1,23 @@
+<%= render 'image' %>
+
+<div class="edit_box">
+  <%= render 'form' %>
+</div>
+
+<%= form_for(@view_key) do |f| %>
+<div class="edit_box">
+  <%= hidden_field_tag :image_id, @image.id %>
+  <table class="view_keys">
+  <% @other_view_keys.each do |other_view_key| %>
+    <tr>
+      <td><%= check_box_tag "other_view_key[#{other_view_key.id}]", true, false %><%= other_view_key.name %></td>
+    </tr>
+  <% end %>
+  </table>
+  <div class="actions">
+  <%= f.submit("Add View Keys") %>
+  </div>
+</div>
+<% end %>
+
+<%= link_to 'Back', edit_gui_image_path(@image) %>

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>View key:</b>
+  <%= @gui_view_key_info.view_key_id %>
+</p>
+
+<p>
+  <b>Logic:</b>
+  <%= @gui_view_key_info.logic_id %>
+</p>
+
+<p>
+  <b>Update on realtime:</b>
+  <%= @gui_view_key_info.update_on_realtime %>
+</p>
+
+<p>
+  <b>Update on activate:</b>
+  <%= @gui_view_key_info.update_on_activate %>
+</p>
+
+
+<%= link_to 'Edit', edit_gui_view_key_info_path(@gui_view_key_info) %> |
+<%= link_to 'Back', gui_view_key_infos_path %>

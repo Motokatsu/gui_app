@@ -1,0 +1,33 @@
+<%= form_for(@gui_view_key_info) do |f| %>
+  <% if @gui_view_key_info.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@gui_view_key_info.errors.count, "error") %> prohibited this gui_view_key_info from being saved:</h2>
+
+      <ul>
+      <% @gui_view_key_info.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :view_key_id %><br />
+    <%= f.number_field :view_key_id %>
+  </div>
+  <div class="field">
+    <%= f.label :logic_id %><br />
+    <%= f.number_field :logic_id %>
+  </div>
+  <div class="field">
+    <%= f.label :update_on_realtime %><br />
+    <%= f.check_box :update_on_realtime %>
+  </div>
+  <div class="field">
+    <%= f.label :update_on_activate %><br />
+    <%= f.check_box :update_on_activate %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

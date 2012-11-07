@@ -9,5 +9,190 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
 */
+.container {
+  width: 910px;
+}
+
+body {
+  background: #cff;
+}
+
+header {
+  padding-top: 20px;
+}
+
+header img {
+  padding: 1em;
+  background: #fff;
+}
+
+footer {
+  text-align: center;
+  margin-top: 10px;
+  width: 710px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer nav {
+  float: none;
+}
+
+section {
+  margin-top: 1em;
+  font-size: 120%;
+  padding: 20px;
+  background: #fff;
+}
+
+section h1 {
+  font-size: 200%;
+}
+
+/* Links */
+
+a {
+  color: #09c;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #069;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #069;
+}
+
+/* Navigation */
+
+nav {
+  float: right;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 0.2em 0;
+}
+
+nav ul li a {
+  padding: 0 5px;
+  font-weight: bold;
+}
+
+nav ul li a:visited {
+  color: #09c;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Sign up button */
+
+a.signup_button {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+  width: 190px;
+  color: #fff;
+  background: #006400;
+  font-size: 150%;
+  font-weight: bold;
+  padding: 20px;
+}
+
+/* Round corners */
+.round {
+  -moz-border-radius: 10px;
+  -webkit-border-radius:  10px;
+  border-radius: 10px;
+}
+
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* User show page */
+table.profile {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+td.main {
+  width: 75%;
+  padding: 1em;
+  vertical-align:top;
+}
+
+td.sidebar {
+  width: 25%;
+  padding: 1em;
+  vertical-align: top;
+  background: #ffc;
+}
+
+.profile img.gravatar {
+  border: 1px solid #999;
+  margin-bottom: -15px;
+}
+
+/*
+*/
+nav.thumbnail {
+  float: none;
+}
+
+nav.thumbnail ul li.image {
+  border-color:black;
+  border-style:solid;
+  border-width:1px;
+  padding: 1px;
+}
+
+nav.thumbnail ul li.image_selected {
+  border-color:red;
+  border-style:solid;
+  border-width:1px;
+  padding: 1px;
+}
+
+canvas {
+  border-color:#0ff;
+  border-style:outset;
+  border-width:3px;  
+}
+
+div.panel_info {
+  vertical-align: top;
+  margin-bottom: 20px;
+  border: 0;
+  padding: 0;
+}
+
+td.view_key_list {
+  width: 65%;
+  padding: 1em;
+  vertical-align:top;
+}
+
+td.logic_info {
+  width: 35%;
+  padding: 1em;
+  vertical-align: top;
+  background: #fcc;
+}
+
+table tr td.selected {
+  color: red;
+}
+

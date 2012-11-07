@@ -1,0 +1,29 @@
+<h1>Listing gui_view_key_infos</h1>
+
+<table>
+  <tr>
+    <th>View key</th>
+    <th>Logic</th>
+    <th>Update on realtime</th>
+    <th>Update on activate</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @gui_view_key_infos.each do |gui_view_key_info| %>
+  <tr>
+    <td><%= gui_view_key_info.view_key_id %></td>
+    <td><%= gui_view_key_info.logic_id %></td>
+    <td><%= gui_view_key_info.update_on_realtime %></td>
+    <td><%= gui_view_key_info.update_on_activate %></td>
+    <td><%= link_to 'Show', gui_view_key_info %></td>
+    <td><%= link_to 'Edit', edit_gui_view_key_info_path(gui_view_key_info) %></td>
+    <td><%= link_to 'Destroy', gui_view_key_info, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New View key info', new_gui_view_key_info_path %>

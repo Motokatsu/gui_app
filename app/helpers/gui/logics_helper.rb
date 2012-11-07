@@ -1,0 +1,2 @@
+module Gui::LogicsHelper
+end

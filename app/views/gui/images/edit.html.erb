@@ -1,0 +1,22 @@
+<table>
+  <tr>
+    <td class="image">
+      <%= render 'image' %>
+    </td>
+  </tr>
+</table>
+
+<p><%= link_to 'Add new ViewKey', :controller => "view_keys", :action => "new", :image_id => @image.id %></p>
+<table id="view_keys">
+  <% @view_keys.each do |view_key| %>
+  <tr>
+    <td x="<%= view_key.x %>" y="<%=view_key.y %>" w="<%=view_key.width %>" h="<%=view_key.height %>">
+      <%= link_to 'Edit', edit_gui_view_key_path(view_key) %>:
+      <%= link_to 'Delete', view_key, :method => :delete, :confirm => "Are you sure?" %>:
+      <%=view_key.name %> (x=<%=view_key.x %>, y=<%=view_key.y %>, w=<%=view_key.width %>, h=<%=view_key.height %>)
+    </td>
+  </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Back', :controller => "panels", :action => "show", :id => @panel, :image_id => @image.id %>

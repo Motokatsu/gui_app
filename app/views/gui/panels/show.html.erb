@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<table>
+  <tr>
+    <td class="main">
+      <%= link_to 'New Image', new_gui_image_path(:panel_id => @panel.id) %>
+      <br/>
+      <hr>
+      <span>No image!</span>
+    </td>
+    <td class="sidebar round">
+      <div class="panel_info">
+        <b>Japanese:</b><br/>
+        <%= @panel.name_jp %><br/>
+        <b>English:</b><br/>
+        <%= @panel.name_en %><br/>
+        <br/>
+        <%= link_to 'Edit', edit_gui_panel_path(@panel) %>
+      </div>
+    </td>
+  </tr>
+</table>

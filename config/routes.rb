@@ -1,4 +1,17 @@
 GuiApp::Application.routes.draw do
+
+  namespace :gui do resources :view_key_infos end
+
+  namespace :gui do resources :logics end
+
+  namespace :gui do resources :view_keys end
+
+  namespace :gui do resources :images end
+
+  namespace :gui do resources :dialogs end
+
+  namespace :gui do resources :panels end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -49,6 +62,7 @@ GuiApp::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
+  root :to => 'gui#home'
 
   # See how all your routes lay out with "rake routes"
 

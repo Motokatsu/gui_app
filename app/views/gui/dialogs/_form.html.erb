@@ -1,0 +1,29 @@
+<%= form_for(@gui_dialog) do |f| %>
+  <% if @gui_dialog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@gui_dialog.errors.count, "error") %> prohibited this gui_dialog from being saved:</h2>
+
+      <ul>
+      <% @gui_dialog.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :module %><br />
+    <%= f.text_field :module %>
+  </div>
+  <div class="field">
+    <%= f.label :title_jp %><br />
+    <%= f.text_field :title_jp %>
+  </div>
+  <div class="field">
+    <%= f.label :title_en %><br />
+    <%= f.text_field :title_en %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

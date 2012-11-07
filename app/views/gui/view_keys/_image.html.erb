@@ -1,0 +1,9 @@
+<table>
+  <tr>
+    <td class="image">
+      <%= content_tag :div, :id => "image_file", :data => {:image_file => "/images/#{@image.style}/#{@image.name}"} do %>
+      <canvas id="image" width=<%= @image.width %> height=<%= @image.height %>></canvas>
+      <% end %>
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<%= render 'image' %>
+
+<p>
+  <b>Name:</b>
+  <%= @view_key.name %>
+</p>
+<p>
+  (x=<%= label_tag :x, @view_key.x, :id => 'view_key_x' %>,
+   y=<%= label_tag :y, @view_key.y, :id => 'view_key_y' %>,
+   w=<%= label_tag :width, @view_key.width, :id => 'view_key_w' %>,
+   h=<%= label_tag :height, @view_key.height, :id => 'view_key_h' %>)
+</p>
+
+<%= link_to 'Edit', edit_gui_view_key_path(@view_key) %> |
+<%= link_to 'Back', gui_view_keys_path %>

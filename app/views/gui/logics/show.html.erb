@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Module:</b><%= @logic.module %>
+  <b>Name:</b><%= @logic.name %>
+</p>
+
+<p>
+  <b>ViewKey:</b><br>
+  <% @logic.view_keys.each do |view_key| %>
+  <%= link_to view_key.name, gui_view_key_path(view_key) %>
+  <% end %>
+</p>
+
+
+<%= link_to 'Edit', edit_gui_logic_path(@gui_logic) %> |
+<%= link_to 'Back', gui_logics_path %>
